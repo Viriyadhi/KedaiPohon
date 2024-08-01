@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kedai_pohon/pages/admin_page.dart';
+import 'package:kedai_pohon/pages/cashier_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -23,6 +25,29 @@ class _LoginPageState extends State<LoginPage> {
     _usernameController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  void _login() {
+    String username = _usernameController.text;
+    String password = _passwordController.text;
+
+    if (username.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Tolong masukkan Username dan Password')),
+      );
+    }
+    if (username == "admin" && password == "satu"){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const AdminPage()),
+      );
+    }
+    if (username == "admin" && password == "satu"){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const CashierPage()),
+      );
+    }
   }
 
   @override
