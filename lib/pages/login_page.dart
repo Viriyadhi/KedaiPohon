@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kedai_pohon/pages/admin_page.dart';
 import 'package:kedai_pohon/pages/cashier_page.dart';
+import 'package:kedai_pohon/pages/testing_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -39,10 +40,10 @@ class _LoginPageState extends State<LoginPage> {
     if (username == "admin" && password == "satu"){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const AdminPage()),
+        MaterialPageRoute(builder: (context) => const TestingPage()),
       );
     }
-    if (username == "admin" && password == "satu"){
+    if (username == "cashier" && password == "dua"){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const CashierPage()),
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.black, backgroundColor: Colors.white, textStyle: const TextStyle(fontSize: 20), // Text color
                 ),
-                onPressed: () {},
+                onPressed: () {_login();},
                 child: const Text('Masuk'),
               ),
             ],
