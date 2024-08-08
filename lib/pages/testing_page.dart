@@ -1,6 +1,9 @@
+import 'dart:io';
+import 'package:path/path.dart';
 import 'package:excel/excel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, rootBundle;
+import 'package:path_provider/path_provider.dart';
 
 class TestingPage extends StatefulWidget {
   const TestingPage({super.key});
@@ -28,14 +31,31 @@ class _TestingPageState extends State<TestingPage> {
 
 
   Future<void> updateExcel(String tulis) async{
-    ByteData data = await rootBundle.load('assets/images/logistics.xlsx');
-    var bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-    var excel = Excel.decodeBytes(bytes);
+    try {
+      ByteData data = await rootBundle.load('assets/images/logistics.xlsx');
+      var bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      var excel = Excel.decodeBytes(bytes);
 
-    Sheet sheetObject = excel['logistics'];
+      Sheet sheetObject = excel['logistics'];
 
-    var cell = sheetObject.cell(CellIndex.indexByString('A1'));
-    cell.value = TextCellValue(tulis);
+      var cell = sheetObject.cell(CellIndex.indexByString('A1'));
+      cell.value = TextCellValue(tulis);
+
+      var fileBytes = excel.save();
+      var directory = await getApplicationDocumentsDirectory();
+      String dirPath = directory.path;
+
+      File(join('$dirPath/output_file_name.xlsx'))
+        ..createSync(recursive: true)
+        ..writeAsBytesSync(fileBytes!);
+
+      print('Updated cell value: ${cell.value}');
+      print('Excel file saved at $directory');
+    } catch (e) {
+      print('Error: $e');
+    }
+
+
   }
   
   @override
@@ -59,7 +79,7 @@ class _TestingPageState extends State<TestingPage> {
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.black, backgroundColor: Colors.white, textStyle: const TextStyle(fontSize: 20), // Text color
                 ),
-                onPressed: () {updateExcel(_testingController.value.toString());},
+                onPressed: () {updateExcel(_testingController.text);},
                 child: const Text('Input'),
               ),
             ],
