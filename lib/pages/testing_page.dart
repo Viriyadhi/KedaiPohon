@@ -42,10 +42,10 @@ class _TestingPageState extends State<TestingPage> {
       cell.value = TextCellValue(tulis);
 
       var fileBytes = excel.save();
-      var directory = await getApplicationDocumentsDirectory();
-      String dirPath = directory.path;
+      var directory = await getDownloadsDirectory();
+      String dirPath = directory!.path;
 
-      File(join('$dirPath/output_file_name.xlsx'))
+      File(join('$dirPath/ga_logis.xlsx'))
         ..createSync(recursive: true)
         ..writeAsBytesSync(fileBytes!);
 
