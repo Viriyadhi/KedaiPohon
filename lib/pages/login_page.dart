@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
 
     if (username.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Tolong masukkan Username dan Password')),
+        const SnackBar(content: Text('Masukkan Username dan Password')),
       );
     }
     if (username == "admin" && password == "satu"){
