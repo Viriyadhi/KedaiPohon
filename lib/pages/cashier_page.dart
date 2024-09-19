@@ -251,12 +251,9 @@ class _CashierPageState extends State<CashierPage> {
                   ],
                 ),
               )
-
-
             ],
           ),
         ),
-
       ),
     );
   }
