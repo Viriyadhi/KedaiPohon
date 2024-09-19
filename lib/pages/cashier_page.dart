@@ -15,8 +15,6 @@ class _CashierPageState extends State<CashierPage> {
     {"name": "Pancakes", "price": 5.99},
     {"name": "Coffee", "price": 2.99},
     {"name": "Omelette", "price": 7.49},
-    {"name": "Omelette", "price": 7.49},
-    {"name": "Omelette", "price": 7.49},
   ];
 
   @override
@@ -59,10 +57,10 @@ class _CashierPageState extends State<CashierPage> {
                 ),
               ),
 
-              // GridView Container (Fixed height)
+
               Container(
                 margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
-                height: 200, // Set a fixed height for GridView area
+                height: 250, // Set a fixed height for GridView area
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: DecoratedBox(
@@ -82,17 +80,19 @@ class _CashierPageState extends State<CashierPage> {
                         mainAxisSpacing: 20,
                         crossAxisCount: 6,
                         children: <Widget>[
-                          // Sample grid items (You can add more if needed)
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.teal[100],
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text("He'd have you all unravel at the"),
+                                child:  Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:Image.asset('assets/images/kedai_pohon.png',
+                                    height: 92,
+                                  ),
                                 ),
                               ),
                               const Text("MENU 1"),
@@ -100,15 +100,18 @@ class _CashierPageState extends State<CashierPage> {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.teal[100],
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text("He'd have you all unravel at the"),
+                                child:  Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:Image.asset('assets/images/kedai_pohon.png',
+                                    height: 92,
+                                  ),
                                 ),
                               ),
                               const Text("MENU 1"),
@@ -116,15 +119,18 @@ class _CashierPageState extends State<CashierPage> {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.teal[100],
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text("He'd have you all unravel at the"),
+                                child:  Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:Image.asset('assets/images/kedai_pohon.png',
+                                    height: 92,
+                                  ),
                                 ),
                               ),
                               const Text("MENU 1"),
@@ -132,15 +138,18 @@ class _CashierPageState extends State<CashierPage> {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.teal[100],
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text("He'd have you all unravel at the"),
+                                child:  Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:Image.asset('assets/images/kedai_pohon.png',
+                                    height: 92,
+                                  ),
                                 ),
                               ),
                               const Text("MENU 1"),
@@ -148,15 +157,18 @@ class _CashierPageState extends State<CashierPage> {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.teal[100],
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text("He'd have you all unravel at the"),
+                                child:  Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:Image.asset('assets/images/kedai_pohon.png',
+                                    height: 92,
+                                  ),
                                 ),
                               ),
                               const Text("MENU 1"),
@@ -164,21 +176,25 @@ class _CashierPageState extends State<CashierPage> {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.teal[100],
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text("He'd have you all unravel at the"),
+                                child:  Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:Image.asset('assets/images/kedai_pohon.png',
+                                    height: 92,
+                                  ),
                                 ),
                               ),
                               const Text("MENU 1"),
                               const Text("IDR 10K"),
                             ],
                           ),
+
                         ],
                       ),
                     ),
@@ -186,10 +202,9 @@ class _CashierPageState extends State<CashierPage> {
                 ),
               ),
 
-              // Item list (chosen items) with name on the left and price on the right
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                height: 300, // Fixed height for the item list
+                height: 200,
                 child: ListView.builder(
                   itemCount: chosenItems.length,
                   itemBuilder: (context, index) {
@@ -203,9 +218,47 @@ class _CashierPageState extends State<CashierPage> {
                   },
                 ),
               ),
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const SizedBox(height: 30),
+                    Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.only(left: 20, right: 20),
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(145, 180, 0, 1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                        ),
+                        onPressed: () {
+                        },
+                        child: const Text(
+                          'KONFIRMASI PESANAN',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+
+
             ],
           ),
         ),
+
       ),
     );
   }
