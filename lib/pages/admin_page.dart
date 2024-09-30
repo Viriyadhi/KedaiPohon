@@ -11,7 +11,6 @@ class _AdminPageState extends State<AdminPage> {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: Row(
         children: [
@@ -89,11 +88,72 @@ class _AdminPageState extends State<AdminPage> {
               ),
             ),
           ),
-
-          // Right side layout, which will take the remaining 80%
-          Expanded(
-            child: Text("Hi")
+          const VerticalDivider(
+            width: 20,
+            thickness: 1,
+            indent: 20,
+            endIndent: 0,
+            color: Colors.grey,
           ),
+       Expanded(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                children: [
+                   SizedBox(
+                    width: 600,
+                    child:  TextField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromRGBO(79, 98, 0, 1),
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromRGBO(79, 98, 0, 1),
+                            width: 1.5,
+                          ),
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 175,
+                    margin: const EdgeInsets.only(left: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(145, 180, 0, 1),
+                        shadowColor: Colors.transparent,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                      ),
+                      onPressed: ( ) {},
+                      child: const Text(
+                        "Cari",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+      )
         ],
       ),
     );
