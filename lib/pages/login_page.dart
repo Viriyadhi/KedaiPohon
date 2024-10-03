@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kedai_pohon/pages/AdminPage/history_transaction.dart';
 import 'package:kedai_pohon/pages/cashier_page.dart';
-// import 'package:kedai_pohon/pages/testing_page.dart';
+import 'package:kedai_pohon/widget/admin/admin_navigation.dart';
+import 'package:kedai_pohon/pages/testing_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     if (username == "admin" && password == "satu"){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const AdminPage()),
+        MaterialPageRoute(builder: (context) => const AdminNavigation()),
       );
     }
     if (username == "cashier" && password == "dua"){
