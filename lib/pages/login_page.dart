@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kedai_pohon/pages/admin_page.dart';
+import 'package:kedai_pohon/pages/AdminPage/history_transaction.dart';
 import 'package:kedai_pohon/pages/cashier_page.dart';
 // import 'package:kedai_pohon/pages/testing_page.dart';
 
