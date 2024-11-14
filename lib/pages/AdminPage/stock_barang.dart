@@ -31,9 +31,9 @@ class StockBarangState extends State<StockBarang> {
               Container(
                 color: Colors.green[700],
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Expanded(child: Text('Item Name', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
                     Expanded(child: Text('Item Out', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center)),
                     Expanded(child: Text('Item Price', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold), textAlign: TextAlign.end)),
