@@ -30,7 +30,6 @@ class _CashierPageState extends State<CashierPage> {
           padding: const EdgeInsets.all(14.0),
           child: Column(
             children: [
-              // TextField
               Container(
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: TextField(
